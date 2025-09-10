@@ -9,7 +9,7 @@ from datetime import datetime
 import ctypes
 
 
-ctypes.windll.kernel32.SetConsoleTitleW('Garage Door - ESP8266')
+#ctypes.windll.kernel32.SetConsoleTitleW('Garage Door - ESP8266')
 config = configparser.ConfigParser()
 config.read('config.ini')
 
