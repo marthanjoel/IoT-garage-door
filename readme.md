@@ -1,59 +1,70 @@
+# IoT Garage Door Simulator
 
-## Micropython Garage Door Controller
+A **desktop-based IoT Garage Door simulation** built with Python and Tkinter.  
+This project allows you to **simulate opening and closing a garage door** and logs all actions with timestamps.
 
-<img src="https://github.com/nconnector/iot-garage-door-telegram/raw/master/screenshot.png" width=40% img align="right">
+---
 
- - [x] Simple authorization
- - [x] Access from any smartphone or PC
- - [x] Two-way communication *(every step verified)*
- - [x] Capable of controlling doors, lights and locks simultaneously
- - [ ] Live snapshots from security camera
+## 🔥 Features
 
-### How does it work?
+- Open/Close the garage door using GUI buttons  
+- Real-time **Door Status** indicator (Red = Closed, Green = Open)  
+- **Action Log** displaying timestamps of all operations  
+- Fully desktop-based simulation (no hardware required)  
+- Easy to extend with multiple doors or networked IoT simulation  
 
-The ESP8266 Microcontroller is connected to the Garage Door through the relay
- 
-The ESP8266 communicates with the Hub through a socket on the local network
+---
 
-The Hub then hosts a Telegram Bot to which authorized users may connect from their Telegram accounts
+## 🛠 Tools & Technologies
 
-## Prerequisites
+- **Programming Language:** Python 3.x  
+- **GUI Library:** Tkinter  
+- **OS:** Linux, Windows, macOS  
 
-- Wired garage door
+---
 
-- ESP8266, ESP32 or another microcontroller
+## ⚙️ Setup Instructions
+ 1. Clone the repository
 
-- A 3V or 5V relay (depending on your controller)
+git clone https://github.com/marthanjoel/IoT-garage-door.git
+cd IoT-garage-door
+2. Install Python 3
+Make sure Python 3.x is installed:
+python3 --version
+3. Run the simulation
+python3 app.py
+You will see a window with:
+Door Status
+Open Door / Close Door buttons
+Action Log
+Click the buttons to simulate opening and closing the garage door.
+<img width="1366" height="768" alt="Screenshot from 2025-09-10 10-45-21" src="https://github.com/user-attachments/assets/07d124e9-3080-4266-8125-da10932abb03" />
 
-- Local hub with Python 3.6+ (windows, linux, rasbpian, etc...) 
+<img width="1366" height="768" alt="Screenshot from 2025-09-10 10-45-58" src="https://github.com/user-attachments/assets/a2a36e03-b39a-4283-b2fe-6eff8ac68359" />
 
-## Installation
+--
 
-This version is set up for a Windows local hub, but it will take little change to adapt it for Unix.
+##🧩 How It Works##
+The door state is stored in a variable (Open or Closed).
 
-1. Burn the firmware from this repo or [from here](https://micropython.org/download) onto your controller
+Clicking Open or Close updates the state.
 
-2. Upload scripts from [8266 Micropython](https://github.com/nconnector/iot-garage-door-telegram/tree/master/8266%20Micropython "8266 Micropython") folder to the controller
+The status label changes color:
 
-3. Add your SSID and PSK to wifi.py on the controller
+Red = Closed
 
-4. Rename config_example.ini to config.ini
+Green = Open
 
-5. Set up a telegram bot, note your bot's API key and Telegram user id
-
-6. Populate config.ini with the API key and your user id as admin, as well as trusted users that will not have to register through the bot
-
-7. In the config, set ESP8266_IP to your controller's local IP address
-
-8. Power up the controller and run telegram.py
-
-## Technology Used
+Every action is logged with a timestamp in the action log.
 
 
-**ESP8266:**
- - MicroPython 1.10
- - SRD-05VDC-SL-C relay
- 
-**Local Hub:**
- - Python 3
- - Telepot
+--
+##💡 Future Improvements##
+Add multiple garage doors simulation
+
+Integrate a Flask web dashboard for remote control
+
+Add real-time notifications or IoT integration
+
+
+Add keyboard shortcuts to control the door
